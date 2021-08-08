@@ -1,0 +1,48 @@
+
+<div class="container ">
+    <div class="row  justify-content-center auto ">
+      
+        <!-------------cart 1-->
+        <div class="card text-center  mx-2 my-2" style="width: 18rem;">
+            <div class="card-body ">
+                <h1 class="icon"><i  class="fas fa-shipping-fast" (click)="ChangeDeliverytOption('Home')" ></i></h1>
+
+                <p class="card-text">Livraison a domicile .</p>
+                <a  class="btn mt-4" (click)="ChangeDeliverytOption('Home')" >L'étape suivante</a>
+
+            </div>
+        </div>
+        <!-----------cart 2-->
+        <div class="card text-center  mx-2 my-2" style="width: 18rem;">
+            <div class="card-body ">
+                <h1 class="icon"><i  class="fas fa-map-marked-alt"  (click)="ChangeDeliverytOption('Point')" ></i></h1>
+
+                <p class="card-text">Livraison a point de livraison . </p>
+                <a  class="btn mt-4" (click)="ChangeDeliverytOption('Point')" >L'étape suivante</a>
+            </div>
+        </div>
+        
+        <!----cart 3--------->
+        <div class="card text-center  mx-2 my-2" style="width: 18rem;">
+            <div class="card-body ">
+                <h1 class="icon"><i  class="fas fa-store"  (click)="ChangeDeliverytOption('PointSeller')" ></i></h1>
+
+                <p class="card-text">Livraison a Point de livraison chez le vendeur.</p>
+                <a  class="btn " (click)="ChangeDeliverytOption('PointSeller')" >L'étape suivante</a>
+            </div>
+        </div>
+
+        <div class="row  auto justify-content-center" *ngIf="DeliveryOption=='point'">
+
+            <p>hello</p>
+         <app-delivery-home></app-delivery-home>
+         <p>hello</p>
+    
+        </div>
+        <div class="row  cart" *ngIf="DeliveryOption=='point'">
+            <app-delivery.point.delivery></app-delivery.point.delivery>
+        </div>
+        <div class="row  cart" *ngIf="DeliveryOption=='pointseller'">
+            <app-delivery.point.seller></app-delivery.point.seller>
+        </div>
+
